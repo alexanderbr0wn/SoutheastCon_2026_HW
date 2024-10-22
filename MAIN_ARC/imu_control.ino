@@ -23,6 +23,13 @@ void initializeIMU() {
     loadAndApplyCalibrationData();
 }
 
+/**
+ * @brief Retrieves the current yaw angle from the IMU.
+ * 
+ * @return The yaw angle in degrees as a float.
+ * 
+ * This function reads the current yaw (orientation) data from the IMU sensor.
+ */
 float getYaw() {
     sensors_event_t event;
     bno.getEvent(&event);
