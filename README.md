@@ -1,13 +1,8 @@
 
-# Autonomous Robotic Chargers (ARC) – IEEE SoutheastCon 2026 Hardware Competition
+# IEEE SoutheastCon 2026 Hardware Competition
 
 ## Project Overview
 The **Autonomous Robotic Chargers (ARC)** project is developed for the **IEEE SoutheastCon 2026 Hardware Competition**. Our team is tasked with designing a fully autonomous robot capable of completing a series of complex tasks under competition rules, such as navigation, signal detection, mechanical task execution, and object manipulation. The project focuses on evaluating the practicality, feasibility, and clarity of the competition's ruleset by testing key tasks and subsystems through a modular robot design.
-
-### Team Members
-- **Alexander Brown** – Project Manager & Software Lead
-- **Brad Farris** – Hardware Integration & Sensors
-- **Justin Roberts** – Quality Control & 3D Printing
 
 ## Key Features
 - **Modular Design**: A flexible and modular robot system that can adapt to various tasks and subsystems.
