@@ -63,7 +63,11 @@ Install these libraries using the Arduino Library Manager or download them from 
 2. Open the Serial Monitor (115200 baud).
 3. The program will automatically load any saved calibration data on startup.
 4. Move the sensor around to calibrate it. When fully calibrated, the program will save the calibration data to EEPROM.
-5. Reset the board to see how the calibration data is retained and loaded.
+   - The gyroscope will calibrate itself from a stationary position.
+   - The mangnetometer is calibrated via various random movements through space.
+   - To calibrate the accelerometer turn the IMU at a 45-degree angle from the X/Y-plane and hold it there for ~10 seconds.  Repeat this process rotating 90-degrees around the Z-plane until the calibration value in the serial monitor becomes '3'.
+   - The system calibration will become '3' once the independent devices are calibrated.
+6. Reset the board to see how the calibration data is retained and loaded.
 
 ## References
 1. Adafruit BNO055 Sensor Library: [Adafruit GitHub Repository](https://github.com/adafruit/Adafruit_BNO055)
