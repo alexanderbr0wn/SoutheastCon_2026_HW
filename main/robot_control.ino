@@ -133,13 +133,21 @@ void turn_left(int left_speed, int right_speed, float angle) {
     if (target_yaw < 0) target_yaw += 360;
 
     int8_t movement[4] = {left_speed, right_speed, 0, 0};
-    move_robot(movement, left_speed, -right_speed, 0);
+    move_robot(movement, left_speed, -right_speed, 0);  // Move robot left
 
-    while (getYaw() > target_yaw) {
-        delay(10);
+    while (true) {
+        float current_yaw = getYaw();
+        
+        // Check if the yaw has reached the target considering wraparound at 0/360
+        if ((initial_yaw >= target_yaw && current_yaw <= target_yaw) || 
+            (initial_yaw < target_yaw && (current_yaw <= target_yaw || current_yaw >= initial_yaw))) {
+            break;
+        }
+
+        delay(10);  // Small delay for smooth control loop
     }
 
-    stop_robot(500);
+    stop_robot(500);  // Stop the robot after reaching the target yaw
 }
 
 /**
@@ -157,12 +165,20 @@ void turn_right(int left_speed, int right_speed, float angle) {
     float target_yaw = initial_yaw + angle;
     if (target_yaw >= 360) target_yaw -= 360;
 
-    int8_t movement[4] = {left_speed, -right_speed, 0, 0};
+    int8_t movement[4] = {left_speed, -right_speed, 0, 0};  // Set speeds for turning right
     move_robot(movement, left_speed, right_speed, 0);
 
-    while (getYaw() < target_yaw) {
-        delay(10);
+    while (true) {
+        float current_yaw = getYaw();
+
+        // Check if the yaw has reached the target considering wraparound at 0/360
+        if ((initial_yaw <= target_yaw && current_yaw >= target_yaw) || 
+            (initial_yaw > target_yaw && (current_yaw >= target_yaw || current_yaw <= initial_yaw))) {
+            break;
+        }
+
+        delay(10);  // Small delay for smooth control loop
     }
 
-    stop_robot(500);
+    stop_robot(500);  // Stop the robot after reaching the target yaw
 }
