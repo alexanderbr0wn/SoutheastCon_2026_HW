@@ -5,6 +5,7 @@
 void setup()
 {
   Wire.begin();
+  Wire.setClock(400000);
   delay(200);
   Serial.begin(9600);
     while (!Serial) {
@@ -19,14 +20,9 @@ void setup()
 
 void loop()
 {
-  move_robot(robot_forward, 2000);
-  move_robot(robot_stop, 500);
-  move_robot(robot_backward, 2000);
-  move_robot(robot_stop, 500);
-  move_robot(robot_turn_left, 900);
-  move_robot(robot_stop, 500);
-  move_robot(robot_turn_right, 900);
-  move_robot(robot_stop, 500);
+  move_forward(100, 100, 2000);  // Move forward at moderate speed for 2 seconds
+  stop_robot(500);
+  move_forward(50, 50, 2000);
 
   // moveStepper(stepper8834, 200, 500);
   // delay(500);
