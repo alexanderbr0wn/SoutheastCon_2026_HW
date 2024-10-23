@@ -147,7 +147,7 @@ void turn_left(int left_speed, int right_speed, float angle) {
         delay(10);  // Small delay for smooth control loop
     }
 
-    stop_robot(500);  // Stop the robot after reaching the target yaw
+    //stop_robot(500);  // Stop the robot after reaching the target yaw
 }
 
 /**
@@ -180,5 +180,5 @@ void turn_right(int left_speed, int right_speed, float angle) {
         delay(10);  // Small delay for smooth control loop
     }
 
-    stop_robot(500);  // Stop the robot after reaching the target yaw
+    //stop_robot(500);  // Stop the robot after reaching the target yaw
 }
