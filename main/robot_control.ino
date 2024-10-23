@@ -106,7 +106,7 @@ void stop_robot(unsigned long duration) {
 }
 
 /**
- * @brief Move the robot backward.
+ * @brief Move the robot forward.
  * 
  * This function moves the robot forward by applying speed values to the left and right motors.
  * The movement lasts for the specified duration before stopping.
@@ -115,7 +115,7 @@ void stop_robot(unsigned long duration) {
  * @param right_speed Speed of the right motor.
  * @param duration Duration to move the robot forward (in milliseconds).
  */
-void move_backward(int8_t left_speed, int8_t right_speed, unsigned long duration) {
+void move_forward(int8_t left_speed, int8_t right_speed, unsigned long duration) {
     int8_t movement[4] = {left_speed, right_speed, 0, 0};
     move_robot(movement, left_speed, right_speed, duration);
 }
@@ -130,13 +130,13 @@ void move_backward(int8_t left_speed, int8_t right_speed, unsigned long duration
  * @param right_speed Speed of the right motor.
  * @param duration Duration to move the robot backward (in milliseconds).
  */
-void move_forward(int8_t left_speed, int8_t right_speed, unsigned long duration) {
+void move_backward(int8_t left_speed, int8_t right_speed, unsigned long duration) {
     int8_t movement[4] = {left_speed, right_speed, 0, 0};
     move_robot(movement, -left_speed, -right_speed, duration);
 }
 
 /**
- * @brief Move the robot backward.
+ * @brief Turn the robot left.
  * 
  * This function moves the robot backward by reversing the speed values for the left and right motors.
  * The movement lasts for the specified duration before stopping.
@@ -151,7 +151,7 @@ void turn_left(int8_t left_speed, int8_t right_speed, unsigned long duration) {
 }
 
 /**
- * @brief Move the robot backward.
+ * @brief Turn the robot right.
  * 
  * This function moves the robot backward by reversing the speed values for the left and right motors.
  * The movement lasts for the specified duration before stopping.

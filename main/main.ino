@@ -11,8 +11,6 @@ void setup()
     while (!Serial) {
         ;
     }
-
-  Serial.println("Serial communication initialized!"); 
   initializeMotors();
   initializeIMU();
   // initializeSteppers();
@@ -20,9 +18,14 @@ void setup()
 
 void loop()
 {
-  move_forward(100, 100, 2000);
+  move_forward(25, 25, 2750); // move to red button
   stop_robot(500);
-  move_forward(50, 50, 2000);
+  turn_right(23, 23, 500); // turn toward keypad
+  // stop_robot(500);
+  // move_forward(23, 23, 8000); // move to keypad
+  // stop_robot(500);
+  // turn_right(23, 23, 1500); // turn toward keypad
+  
 
   // moveStepper(stepper8834, 200, 500);
   // delay(500);
