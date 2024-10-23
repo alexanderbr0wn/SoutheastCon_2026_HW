@@ -73,7 +73,7 @@ The ARC robot for IEEE SoutheastCon 2026 is built using the following components
 | **Flex Sensor**             | SEN-10264                   | Flex Sensor 2.2"                                        |
 | **IMU**                     | BNO055                      | 9-DOF Absolute Orientation IMU                          |
 | **Limit Switch for Piston** | SAJ101XBL0N74SDTPTQ         | Switch Snap Action SPDT 0.1A 30V                        |
-| **Tracked Tank Chassis**    | Unknown                     | Robot Tracked Tank Car Chassis                          |
+| **Tracked Tank Chassis**    | MFG: Hiwonder               | Robot Tracked Tank Car Chassis                          |
 | **Microcontroller**         | Mega 2560 Rev3              | Microcontroller Board                                   |
 | **Motor Controller**        | L298N                       | Motor Driver Controller Board Module                    |
 | **Mechanical Claw**         | B09KL42BT9                  | Mechanical Claw/Clamp Arm/Gripper with High Torque Servo|
