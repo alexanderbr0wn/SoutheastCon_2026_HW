@@ -57,6 +57,36 @@ Once the software is uploaded to the robot:
 - **Autonomous Mode**: The robot will autonomously navigate the arena, detect signals, and complete assigned tasks.
 - **Development Mode**: Use the scripts in the `dev-tests/` directory to test individual subsystems (e.g., motor control, sensor readings) in isolation before full integration.
 
+## Components
+
+The ARC robot for IEEE SoutheastCon 2026 is built using the following components:
+
+| Component                  | Model/Part Number           | Description                                             |
+|----------------------------|-----------------------------|---------------------------------------------------------|
+| **IR Sensor**               | B00LZV1V10                  | Infrared Reflective Sensor Module                       |
+| **Ultrasonic Sensor**       | HC-SR04                     | Ultrasonic Sensor HC-SR04 40kHz                         |
+| **Limit Switch**            | KW12-3                      | Micro Limit Switch 250V 5A SPDT 1NO 1NC                 |
+| **Stepper Motor Driver**    | 2183-2134-ND                | DRV8834 Stepper Motor Driver Carrier                    |
+| **Stepper Motor**           | 2183-1206-ND                | Bipolar Stepper Motor 4.5V 0.67A/Phase                  |
+| **Machine Vision Camera**   | SEN-16989                   | OpenMV Cam H7 Plus                                      |
+| **Electric Push Rod**       | 1738-FIT0803-ND             | 6V Electric Push Rod 10mm-128N                          |
+| **Flex Sensor**             | SEN-10264                   | Flex Sensor 2.2"                                        |
+| **IMU**                     | BNO055                      | 9-DOF Absolute Orientation IMU                          |
+| **Limit Switch for Piston** | SAJ101XBL0N74SDTPTQ         | Switch Snap Action SPDT 0.1A 30V                        |
+| **Tracked Tank Chassis**    | Unknown                     | Robot Tracked Tank Car Chassis                          |
+| **Microcontroller**         | Mega 2560 Rev3              | Microcontroller Board                                   |
+| **Motor Controller**        | L298N                       | Motor Driver Controller Board Module                    |
+| **Mechanical Claw**         | B09KL42BT9                  | Mechanical Claw/Clamp Arm/Gripper with High Torque Servo|
+| **N-Channel Power Mosfet**  | IRLZ44NPBF-ND               | N-Channel 55V 47A TO-220AB                              |
+| **P-Channel Power Mosfet**  | IRF9540NPBF-ND              | P-Channel 100V 23A TO-220AB                             |
+| **Coupler**                 | n/a                         | 5mm to 5mm Coupler                                      |
+| **DC Buck Converter**       | 1738-DFR1015-ND             | DC-DC Multi-Output Buck Converter                       |
+| **Connector**               | 4209                        | STEMMA QT/Qwiic JST SH 4-pin to Male Headers Cable - 150mm |
+| **RF Receiver**             | 1097                        | RF T4 Receiver - 315MHz Toggle Type                     |
+| **RF Fob**                  | 1391                        | Keyfob 2-Button RF Remote Control - 315MHz              |
+| **Silicone Bands**          | n/a                         | Silicone bands for tank treads, improved traction in crater |
+
+
 ## Testing and Validation
 
 <!-- The software is tested through:
