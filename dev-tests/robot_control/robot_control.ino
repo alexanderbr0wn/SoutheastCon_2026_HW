@@ -117,84 +117,84 @@ void move_backward(int left_speed, int right_speed, unsigned long duration) {
     move_robot(movement, -left_speed, -right_speed, duration);
 }
 
-// /**
-//  * @brief Turn the robot to the left.
-//  * 
-//  * This function rotates the robot to the left by adjusting the left and right motor speeds.
-//  * It continuously checks the IMU's yaw value until the specified angle is reached, then stops the robot.
-//  * 
-//  * @param left_speed Speed of the left motor.
-//  * @param right_speed Speed of the right motor.
-//  * @param angle The angle (in degrees) to turn the robot.
-//  */
-// void turn_left(int left_speed, int right_speed, float angle) {
-//     Serial.println("Turn Left function with IMU called");
+/**
+ * @brief Turn the robot to the left.
+ * 
+ * This function rotates the robot to the left by adjusting the left and right motor speeds.
+ * It continuously checks the IMU's yaw value until the specified angle is reached, then stops the robot.
+ * 
+ * @param left_speed Speed of the left motor.
+ * @param right_speed Speed of the right motor.
+ * @param angle The angle (in degrees) to turn the robot.
+ */
+void turn_left(int left_speed, int right_speed, float angle) {
+    Serial.println("Turn Left function with IMU called");
 
-//     // Get initial yaw and calculate target yaw
-//     float initial_yaw = getYaw();
-//     Serial.print("Initial Yaw: ");
-//     Serial.println(initial_yaw);
+    // Get initial yaw and calculate target yaw
+    float initial_yaw = getYaw();
+    Serial.print("Initial Yaw: ");
+    Serial.println(initial_yaw);
 
-//     float target_yaw = initial_yaw - angle;
-//     if (target_yaw < 0) target_yaw += 360;  // Handle wraparound at 0 degrees
-//     Serial.print("Target Yaw: ");
-//     Serial.println(target_yaw);
+    float target_yaw = initial_yaw - angle;
+    if (target_yaw < 0) target_yaw += 360;  // Handle wraparound at 0 degrees
+    Serial.print("Target Yaw: ");
+    Serial.println(target_yaw);
 
-//     // Define the movement array
-//     int8_t movement[4] = {left_speed, right_speed, 0, 0};
+    // Define the movement array
+    int8_t movement[4] = {left_speed, right_speed, 0, 0};
 
-//     // Command the robot to start turning left
-//     move_robot(movement, left_speed, -right_speed, 0);  // Start moving, no duration (IMU controls the stop)
+    // Command the robot to start turning left
+    move_robot(movement, left_speed, -right_speed, 0);  // Start moving, no duration (IMU controls the stop)
 
-//     // Continuously monitor the yaw until the target is reached
-//     while (true) {
-//         float current_yaw = getYaw();
-//         Serial.print("Current Yaw: ");
-//         Serial.println(current_yaw);
+    // Continuously monitor the yaw until the target is reached
+    while (true) {
+        float current_yaw = getYaw();
+        Serial.print("Current Yaw: ");
+        Serial.println(current_yaw);
 
-//         // Stop the robot when the yaw reaches the target, accounting for wraparound
-//         if ((initial_yaw >= target_yaw && current_yaw <= target_yaw) || 
-//             (initial_yaw < target_yaw && (current_yaw <= target_yaw || current_yaw >= initial_yaw))) {
-//             Serial.println("Target Yaw reached, stopping motors");
-//             stop_robot(500);  // Stop the robot after reaching the target
-//             break;
-//         }
+        // Stop the robot when the yaw reaches the target, accounting for wraparound
+        if ((initial_yaw >= target_yaw && current_yaw <= target_yaw) || 
+            (initial_yaw < target_yaw && (current_yaw <= target_yaw || current_yaw >= initial_yaw))) {
+            Serial.println("Target Yaw reached, stopping motors");
+            stop_robot(500);  // Stop the robot after reaching the target
+            break;
+        }
 
-//         delay(10);  // Small delay for smooth control loop
-//     }
+        delay(10);  // Small delay for smooth control loop
+    }
 
-//     Serial.println("Turn Left with IMU completed");
-// }
+    Serial.println("Turn Left with IMU completed");
+}
 
-// /**
-//  * @brief Turn the robot to the right.
-//  * 
-//  * This function rotates the robot to the right by adjusting the left and right motor speeds.
-//  * It continuously checks the IMU's yaw value until the specified angle is reached, then stops the robot.
-//  * 
-//  * @param left_speed Speed of the left motor.
-//  * @param right_speed Speed of the right motor.
-//  * @param angle The angle (in degrees) to turn the robot.
-//  */
-// void turn_right(int left_speed, int right_speed, float angle) {
-//     float initial_yaw = getYaw();
-//     float target_yaw = initial_yaw + angle;
-//     if (target_yaw >= 360) target_yaw -= 360;
+/**
+ * @brief Turn the robot to the right.
+ * 
+ * This function rotates the robot to the right by adjusting the left and right motor speeds.
+ * It continuously checks the IMU's yaw value until the specified angle is reached, then stops the robot.
+ * 
+ * @param left_speed Speed of the left motor.
+ * @param right_speed Speed of the right motor.
+ * @param angle The angle (in degrees) to turn the robot.
+ */
+void turn_right(int left_speed, int right_speed, float angle) {
+    float initial_yaw = getYaw();
+    float target_yaw = initial_yaw + angle;
+    if (target_yaw >= 360) target_yaw -= 360;
 
-//     int8_t movement[4] = {left_speed, -right_speed, 0, 0};  // Set speeds for turning right
-//     move_robot(movement, left_speed, right_speed, 0);
+    int8_t movement[4] = {left_speed, -right_speed, 0, 0};  // Set speeds for turning right
+    move_robot(movement, left_speed, right_speed, 0);
 
-//     while (true) {
-//         float current_yaw = getYaw();
+    while (true) {
+        float current_yaw = getYaw();
 
-//         // Check if the yaw has reached the target considering wraparound at 0/360
-//         if ((initial_yaw <= target_yaw && current_yaw >= target_yaw) || 
-//             (initial_yaw > target_yaw && (current_yaw >= target_yaw || current_yaw <= initial_yaw))) {
-//             break;
-//         }
+        // Check if the yaw has reached the target considering wraparound at 0/360
+        if ((initial_yaw <= target_yaw && current_yaw >= target_yaw) || 
+            (initial_yaw > target_yaw && (current_yaw >= target_yaw || current_yaw <= initial_yaw))) {
+            break;
+        }
 
-//         delay(10);  // Small delay for smooth control loop
-//     }
+        delay(10);  // Small delay for smooth control loop
+    }
 
-//     //stop_robot(500);  // Stop the robot after reaching the target yaw
-// }
+    //stop_robot(500);  // Stop the robot after reaching the target yaw
+}
