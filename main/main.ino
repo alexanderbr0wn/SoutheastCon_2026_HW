@@ -9,7 +9,7 @@ void setup()
   delay(200);
   Serial.begin(9600);
     while (!Serial) {
-        ;  // Wait for the serial port to connect (only needed on some boards)
+        ;
     }
 
   Serial.println("Serial communication initialized!"); 
@@ -20,7 +20,7 @@ void setup()
 
 void loop()
 {
-  move_forward(100, 100, 2000);  // Move forward at moderate speed for 2 seconds
+  move_forward(100, 100, 2000);
   stop_robot(500);
   move_forward(50, 50, 2000);
 
