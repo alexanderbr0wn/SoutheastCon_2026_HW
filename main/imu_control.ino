@@ -13,11 +13,9 @@ Adafruit_BNO055 bno = Adafruit_BNO055(55);
  */
 void initializeIMU() {
     if (!bno.begin()) {
-        Serial.println("No BNO055 detected. Check wiring.");
-        while (1);
+        while (1);  // Loop indefinitely if BNO055 is not detected
     }
     bno.setExtCrystalUse(true);
-    Serial.println("IMU Initialized");
 
     // Load and apply calibration data after initializing the IMU
     loadAndApplyCalibrationData();
@@ -52,7 +50,6 @@ void loadAndApplyCalibrationData() {
 
     // Apply calibration data to BNO055
     bno.setSensorOffsets(calData);
-    Serial.println("Calibration data applied to BNO055.");
     delay(500);  // Allow time for calibration to take effect
 }
 
@@ -72,5 +69,4 @@ void loadAndApplyCalibrationData() {
 //     for (int i = 0; i < calibrationSize; i++) {
 //         EEPROM.update(eeAddress + i, calData[i]);
 //     }
-//     Serial.println("Calibration data saved to EEPROM.");
 // }
