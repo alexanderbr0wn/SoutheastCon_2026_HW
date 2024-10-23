@@ -106,7 +106,7 @@ void stop_robot(unsigned long duration) {
 }
 
 /**
- * @brief Move the robot forward.
+ * @brief Move the robot backward.
  * 
  * This function moves the robot forward by applying speed values to the left and right motors.
  * The movement lasts for the specified duration before stopping.
