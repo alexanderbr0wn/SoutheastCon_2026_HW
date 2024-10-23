@@ -18,7 +18,7 @@ void setup()
 
 void loop()
 {
-  move_forward(25, 25, 2750); // move to red button
+  move_forward(25, 25, 2800); // move to red button
   stop_robot(500);
   turn_right(23, 23, 500); // turn toward keypad
   // stop_robot(500);
