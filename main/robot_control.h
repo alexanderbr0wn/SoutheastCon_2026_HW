@@ -19,11 +19,11 @@ extern int8_t robot_stop[4];
 bool WireWriteByte(uint8_t val);
 bool WireWriteDataArray(uint8_t reg, uint8_t *val, unsigned int len);
 void initializeMotors();
-void move_robot(int8_t *movement, int left_speed, int right_speed, unsigned long duration);
+void move_robot(int8_t *movement, int8_t left_speed, int8_t right_speed, unsigned long duration);
 void stop_robot(unsigned long duration);
-void move_forward(int left_speed, int right_speed, unsigned long duration);
-void move_backward(int left_speed, int right_speed, unsigned long duration);
-void turn_left(int left_speed, int right_speed, unsigned long duration);
-void turn_right(int left_speed, int right_speed, unsigned long duration);
+void move_forward(int8_t left_speed, int8_t right_speed, unsigned long duration);
+void move_backward(int8_t left_speed, int8_t right_speed, unsigned long duration);
+void turn_left(int8_t left_speed, int8_t right_speed, unsigned long duration);
+void turn_right(int8_t left_speed, int8_t right_speed, unsigned long duration);
 
 #endif
